@@ -18,6 +18,34 @@ export default {
             },
         },
     },
+    daisyui: {
+        themes: [
+          // "business",
+          {
+            mytheme: {
+              
+    "primary": "#6366f1",
+              
+    "secondary": "#0037ff",
+              
+    "accent": "#ea8c00",
+              
+    "neutral": "#080400",
+              
+    "base-100": "#20242e",
+              
+    "info": "#0063f9",
+              
+    "success": "#9ffd00",
+              
+    "warning": "#d55500",
+              
+    "error": "#ee2437",
+    
+              },
+            },
+          ],
+        },
     plugins: [
         require('daisyui'),
     ],
