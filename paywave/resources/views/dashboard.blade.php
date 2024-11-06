@@ -30,7 +30,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 justify-items-center">
 
       <a class="card card-compact w-full max-w-xs shadow-xl bg-neutral-800 cursor-pointer"
-      href="">
+      href="/employees/create">
         <figure>
           <img src="{{url('images/add.png')}}" class="rounded-lg h-44 w-full object-cover" alt="Add Employee" />
         </figure>
@@ -41,7 +41,7 @@
       </a>
 
       <a class="card card-compact w-full max-w-xs shadow-xl bg-neutral-800"
-      href="">
+      href="/employees">
         <figure>
           <img src="{{url('images/emp.png')}}" class="rounded-lg h-44 w-full object-cover" alt="Employees" />
         </figure>

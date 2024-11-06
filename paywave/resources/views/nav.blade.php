@@ -11,7 +11,7 @@
 <body>
     <div class="navbar bg-base-300 px-4 md:px-8">
         <div class="flex-1">
-          <a class="btn btn-ghost text-xl">PayWave 🌊</a>
+          <a href="/" class="btn btn-ghost text-xl">PayWave 🌊</a>
         </div>
         <div class="flex-none">
           <div class="dropdown dropdown-end">

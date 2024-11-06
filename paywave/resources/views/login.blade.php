@@ -10,11 +10,9 @@
         </div>
         
         <div class="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl">
-            <!-- Login Form -->
             <form action="{{ url('/login') }}" method="POST" class="card-body">
-                @csrf <!-- CSRF Token for security -->
+                @csrf 
                 
-                <!-- Display Success and Error Messages -->
                 @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
@@ -28,7 +26,6 @@
                     </div>
                 @endif
                 
-                <!-- Username Field -->
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">Username</span>
@@ -42,7 +39,6 @@
                     />
                 </div>
                 
-                <!-- Password Field -->
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">Password</span>
@@ -59,7 +55,6 @@
                     </label>
                 </div>
                 
-                <!-- Submit Button -->
                 <div class="form-control mt-6">
                     <button type="submit" class="btn btn-primary">Login</button>
                 </div>

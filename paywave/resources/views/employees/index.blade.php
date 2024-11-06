@@ -1,12 +1,10 @@
 @extends('nav')
 @php
-$employees = [
-    ['id' => 1, 'name' => 'Sarah Johnson', 'position' => 'Senior Developer', 'department' => 'Engineering', 'salary' => 95000],
-    ['id' => 2, 'name' => 'Michael Chen', 'position' => 'Product Manager', 'department' => 'Product', 'salary' => 88000],
-    ['id' => 3, 'name' => 'Emily Davis', 'position' => 'UX Designer', 'department' => 'Design', 'salary' => 75000],
-    ['id' => 4, 'name' => 'James Wilson', 'position' => 'Marketing Lead', 'department' => 'Marketing', 'salary' => 82000],
-    ['id' => 5, 'name' => 'Lisa Anderson', 'position' => 'HR Manager', 'department' => 'Human Resources', 'salary' => 78000],
-];
+//random color generator for profile name
+$colors = ['red', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink'];
+function random_color($colors) {
+    return $colors[array_rand($colors)];
+}
 @endphp
 
 @section('content')
@@ -15,8 +13,11 @@ $employees = [
         <thead>
             <tr>
                 <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Employee</th>
+                <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Email</th>
+                <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Phone</th>
                 <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Department</th>
                 <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Salary</th>
+                <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">DOJ</th>
                 <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider"></th>
             </tr>
         </thead>
@@ -39,17 +40,27 @@ $employees = [
                         </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900">{{ $employee['email'] }}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900">{{ $employee['phone'] }}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
                         <div class="text-sm text-gray-900">{{ $employee['department'] }}</div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="text-sm text-gray-900">${{ number_format($employee['salary'], 2) }}</div>
                     </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900">{{$employee["hire_date"]}}</div>
+                    </td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <button class="text-gray-400 hover:text-gray-500">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 4h.01M20.24 4.5c-.88-.88-2.3-.88-3.18 0L9.34 12.24c-.63.63-.2 1.71.7 1.71h6.71l4.42 4.43c.88.88 2.3.88 3.18 0l.54-.54c.88-.88.88-2.3 0-3.18L20.24 4.5z"></path>
+                        <a href="/employees/{{$employee->id}}/edit" class="text-gray-400 hover:text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
                             </svg>
-                        </button>
+
+                        </a>
                     </td>
                 </tr>
             @endforeach
