@@ -7,4 +7,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/emp', function() {
+    return view("displayEmployees");
+});
+
 // Route::get("/user", [UserController::class, 'index']);

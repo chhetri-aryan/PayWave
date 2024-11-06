@@ -1,63 +1,30 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
-</head>
-<body>
+@extends('nav')
 
-  <div class="navbar bg-base-300 px-4 md:px-8">
-    <div class="flex-1">
-      <a class="btn btn-ghost text-xl">PayWave 🌊</a>
-    </div>
-    <div class="flex-none">
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar online">
-          <div class="w-10 rounded-full">
-            <img
-              alt="Profile image"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-          </div>
-        </div>
-        <ul tabindex="0" class="menu menu-sm dropdown-content cardcolor rounded-box z-10 mt-3 w-52 p-2 shadow bg-black">
-          <li>
-            <a class="justify-between">
-              Profile
-              <span class="badge">New</span>
-            </a>
-          </li>
-          <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
-        </ul>
+@section('content')   
+<div class="diff aspect-[16/3]">
+  <div class="diff-item-1">
+      <div class="bg-info grid place-content-center text-9xl font-black">
+          PayWave 🌊
       </div>
-    </div>
   </div>
-
-  <div class="diff aspect-[16/3]">
-    <div class="diff-item-1">
-        <div class="bg-info grid place-content-center text-9xl font-black">
-            PayWave 🌊
-        </div>
-    </div>
-    <div class="diff-item-2">
-        
-        <div id="time" class="bg-primary text-primary-content grid place-content-center text-9xl font-black">DAISY</div>
+  <div class="diff-item-2">
+      
+      <div id="time" class="bg-primary text-primary-content grid place-content-center text-9xl font-black">DAISY</div>
 
 
-    </div>
-    <div class="diff-resizer"></div>
+  </div>
+  <div class="diff-resizer"></div>
 </div>
 
-  <script>
-    function updateTime() {
-      const now = new Date();
-      const timeString = now.toLocaleTimeString();
-      document.getElementById('time').textContent = timeString;
-    }
-    setInterval(updateTime, 1000);
-    updateTime();
-  </script>
+<script>
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById('time').textContent = timeString;
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
 
   <div class="container mx-auto px-4 py-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 justify-items-center">
@@ -114,3 +81,4 @@
 
 </body>
 </html>
+@stop
