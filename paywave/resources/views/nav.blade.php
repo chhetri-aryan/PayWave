@@ -30,7 +30,13 @@
                 </a>
               </li>
               <li><a>Settings</a></li>
-              <li><a>Logout</a></li>
+              <form action="{{ route('logout') }}" method="POST">
+                  <li>
+                    @csrf
+                    <button type="submit">Logout</button>
+                  </li>
+              </form>
+            
             </ul>
           </div>
         </div>
