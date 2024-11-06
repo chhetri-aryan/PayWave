@@ -22,7 +22,7 @@ function random_color($colors) {
             </tr>
         </thead>
         <tbody class="bg-indigo-200 divide-y divide-gray-200">
-            @foreach ($employees as $employee)
+            @forelse ($employees as $employee)
                 <tr class="hover:bg-gray-50">
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="flex items-center">
@@ -63,7 +63,12 @@ function random_color($colors) {
                         </a>
                     </td>
                 </tr>
-            @endforeach
+                @empty
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-center" colspan="7">
+                        <div class="text-2xl border-lime-100 font-bold text-gray-900">No employees found</div>
+                    </td>
+            @endforelse
         </tbody>
     </table>
 </div>

@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container mx-auto p-6">
-    <h1 class="text-2xl font-semibold text-white mb-6">Gender Ratio Analysis</h1>
+    <h1 class="text-4xl font-semibold text-white mb-6">Gender Ratio Analysis:</h1>
     
     <div class="w-full max-w-lg mx-auto"> 
         <canvas id="genderRatioChart"></canvas>

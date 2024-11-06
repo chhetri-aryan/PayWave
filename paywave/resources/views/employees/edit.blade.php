@@ -66,16 +66,32 @@
 
   </form>
 
-  <form action="/employees/{{$employee->id}}" method="POST"> 
-    @csrf 
-    @method('DELETE') 
-  <div class="max-w-2xl mx-auto grid grid-cols-1 mt-5">
-      <div class="col-span-full flex justify-end">
-          <button type="submit" class="col-span-full bg-red-600 text-white px-5 py-2.5 rounded-lg hover:bg-red-900 transition-all ease-in-out duration-300">Delete Employee</button>
-        </div>
-    </div>
+<div class="max-w-2xl mx-auto grid grid-cols-1 mt-4">
 
-    </form>
+  
+  <div class="col-span-full flex justify-end">
+    <label for="my_modal_6" class="bg-red-500 text-white px-5 py-2.5 rounded-lg hover:bg-red-700 transition-all ease-in-out duration-300 cursor-pointer">Delete Employee</label>
+  </div>
+  
+  <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+  <div class="modal" role="dialog">
+    <div class="modal-box">
+      <h3 class="text-lg font-bold">Are you sure you want to delete?</h3>
+      <div class="modal-action">
+        <form action="/employees/{{$employee->id}}" method="POST"> 
+          @csrf 
+          @method('DELETE') 
+          <div class="col-span-full flex justify-end">
+            <button type="submit" class="bg-red-600 text-white px-5 py-2.5 rounded-lg hover:bg-red-900 transition-all ease-in-out duration-300">Delete</button>
+          </div>
+        </form>
+        <label for="my_modal_6" class="btn">Cancel</label>
+      </div>
+    </div>
+  </div>
+  
+</div>
+  
   
 </div>
 @endsection
