@@ -53,7 +53,7 @@
       </a>
 
       <a class="card card-compact w-full max-w-xs shadow-xl bg-neutral-800"
-      href="">
+      href="/payments">
         <figure>
           <img src="{{url('images/pay.png')}}" class="rounded-lg h-44 w-full object-cover" alt="Payment History" />
         </figure>
@@ -65,7 +65,7 @@
       </a>
 
       <a class="card card-compact w-full max-w-xs shadow-xl bg-neutral-800"
-      href="fds">
+      href="/analytics">
         <figure>
           <img src="{{url('images/graph.png')}}" class="rounded-lg h-44 w-full object-cover" alt="Shoes" />
         </figure>

@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container mx-auto p-6">
-  <h1 class="text-2xl font-semibold text-indigo-700 mb-4 text-center">Add New Employee</h1>
+  <h1 class="text-5xl font-semibold text-indigo-700 mb-4 text-center">Add New Employee</h1>
 
-  <form action="/employees" method="POST" class="max-w-2xl mx-auto grid grid-cols-1 gap-4">
+  <form action="/employees" method="POST" class="max-w-2xl mt-10 mx-auto grid grid-cols-1 gap-4">
     @csrf
     <div class="col-span-full">
       <label for="name" class="sr-only">Full Name</label>

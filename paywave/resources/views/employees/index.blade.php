@@ -1,18 +1,13 @@
 @extends('nav')
-@php
-//random color generator for profile name
-$colors = ['red', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink'];
-function random_color($colors) {
-    return $colors[array_rand($colors)];
-}
-@endphp
 
 @section('content')
-<div class="container mx-auto overflow-x-auto">
+<div class="container mx-auto mt-8 p-4">
+    <h2 class="text-5xl text-indigo-200 font-bold mb-6">Employees:</h2>
+
     <table class="min-w-full divide-y divide-gray-200 mx-auto bg-white">
         <thead>
-            <tr>
-                <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Employee</th>
+            <tr class="bg-indigo-500 text-white text-center">
+                <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Name</th>
                 <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Email</th>
                 <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Phone</th>
                 <th class="px-6 py-3 text-left text-lg font-medium text-gray-900 uppercase tracking-wider">Department</th>
@@ -28,13 +23,13 @@ function random_color($colors) {
                         <div class="flex items-center">
                             <div class="flex-shrink-0 h-10 w-10">
                                 <div class="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center">
-                                    <span class="text-indigo-700 font-medium text-sm">
+                                    <span class="font-medium text-sm {{ $employee['gender'] === 'male' ? 'text-blue-700' : 'text-pink-700' }}">
                                         {{ strtoupper(substr($employee['name'], 0, 1) . substr(strstr($employee['name'], ' '), 1, 1)) }}
                                     </span>
                                 </div>
                             </div>
                             <div class="ml-4">
-                                <div class="text-sm font-medium text-gray-900">{{ $employee['name'] }}</div>
+                                <div class="text-sm font-medium text-gray-900">{{ strtoupper($employee['name']) }}</div>
                                 <div class="text-sm text-gray-500">{{ $employee['position'] }}</div>
                             </div>
                         </div>

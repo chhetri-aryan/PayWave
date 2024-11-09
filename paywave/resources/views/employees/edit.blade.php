@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container mx-auto p-6">
-  <h1 class="text-2xl font-semibold text-indigo-700 mb-4 text-center">Edit Employee</h1>
+  <h1 class="text-4xl font-semibold text-indigo-700 mb-4 text-center">Edit Employee</h1>
 
   <form action="/employees/{{$employee->id}}" method="POST" class="max-w-2xl mx-auto grid grid-cols-1 gap-4">
     @csrf 
@@ -31,9 +31,6 @@
         </div>
       </div>
 
-     
-    
-    
     <div class="col-span-full">
       <label for="email" class="sr-only">Email Address</label>
       <input type="email" name="email" id="email" value="{{$employee->email}}" class="text-black w-full p-3 rounded-lg border-2 border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300" placeholder="Email Address" required>
