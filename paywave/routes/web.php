@@ -21,8 +21,13 @@ Route::middleware([CheckAdminSession::class])->group(function () {
 
 });
 
-
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('/login', function () {
+    if (session()->has('is_admin')) {
+        return redirect()->route('dashboard');
+    }
+    return view('login');
+})->name('login');
+// Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
