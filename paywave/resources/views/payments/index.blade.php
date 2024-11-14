@@ -1,5 +1,7 @@
 @extends('nav')
-@php $total = $payments->sum('amount'); @endphp
+@php
+$total = $payments->where('status', 'success')->sum('amount');
+@endphp
 
 @section('content')  
 <div class="container mx-auto mt-8 p-4">

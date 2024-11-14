@@ -19,7 +19,7 @@
               <div class="w-10 rounded-full">
                 <img
                   alt="Profile image"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                  src="https://cdn-icons-png.flaticon.com/512/9203/9203764.png" />
               </div>
             </div>
             <ul tabindex="0" class="menu menu-sm dropdown-content cardcolor rounded-box z-10 mt-3 w-52 p-2 shadow bg-black">
