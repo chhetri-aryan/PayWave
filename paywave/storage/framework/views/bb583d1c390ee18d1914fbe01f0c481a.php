@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\aryan\Desktop\Laravel Project\paywave\resources\views/adduser.blade.php ENDPATH**/ ?>
